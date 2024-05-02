@@ -1,9 +1,9 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const Store = require('conect-mongo');
+const Store = require('connect-mongo');
 require('dotenv').config();
-
+const cors = require('cors')
 //user dependancies
 
 const MONGO_URI = process.env.MONGO_URI;
@@ -14,6 +14,7 @@ const plantDataController = require('./controllers/plantDataController');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors())
 app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
 
@@ -64,12 +65,12 @@ app.use((err, req, res, next) => {
 /**
  * start server
  */
-let testServer;
+let testServer
 if (process.env.NODE_ENV !== 'test') {
-testServer = app.listen(port, () => {
-  console.log(`Server listening on port: ${port}...`);
-}) 
-} else {
+  testServer = app.listen(port, () => {
+    console.log(`Server listening on port: ${port}...`);
+  })
+}else{
   testServer = app.listen(0)
 }
 

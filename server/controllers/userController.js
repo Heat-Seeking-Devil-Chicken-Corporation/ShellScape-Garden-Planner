@@ -39,7 +39,7 @@ userController.verifyUser = async (req, res, next) => {
       return res.status(401).json( { message: 'Authentication failed: Incorrect password '});
     }
 
-    rq.session.userId = user._id;
+    req.session.userId = user._id;
 
     res.locals.user = user;
 

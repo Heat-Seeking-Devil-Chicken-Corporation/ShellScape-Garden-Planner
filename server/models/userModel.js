@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const MONGO_URI = process.env.MONGO_URI ;
 const SALT_WORK_FACTOR = 10;
 
-
+//create unique connections to each database
 const userConn = mongoose.createConnection(MONGO_URI,{dbName: 'userDB',});
 
 const Schema = mongoose.Schema;

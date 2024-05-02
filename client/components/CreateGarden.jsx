@@ -12,15 +12,15 @@ const CreateGarden = () => {
 	const navigate = useNavigate();
 	// const dispatch = useDispatch();
 
-	const handleSubmit = async (e) => {
-		try {
-			e.preventDefault();
-			navigate('/SelectPlantsTester3');
-		} catch (error) {
-			// Log any errors that occur during the try block
-			console.error('Error fetching plant data:', error);
-		}
-	};
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      navigate('/selectplantstester3');
+    } catch (error) {
+      // Log any errors that occur during the try block
+      console.error('Error fetching plant data:', error);
+    }
+  };
 
 	return (
 		<div id='create-con' className='container'>
